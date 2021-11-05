@@ -1,0 +1,27 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM1ekNDQWMrZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeE1EZ3lOVEEwTWprMU4xb1hEVE14TURneU16QTBNamsxTjFvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBT1U2CjZwYVBadkpISDFvZytrYWZaUmRycXBpM0o2RkV0TDFrYjdiV0xVNExCa05iaFg4WHMrUi9STHVOSGkrbGx2UW8KZjdMckliNEM0c0dNUGIwVUNJOWpwUnM1MjJLTllwM1g4VWNTdmsvbkJKUDl6NW43VCtLdHhmRkJIVXpLSG5jZQo4dDVSREhMVVJCazlaVjlXaEppTDlZc09aZEQxZ1hPamE0UXlybTEzdEpGek1xTVhlSktieEtaVkFtYXA2MEJpClp1S2ZRaEUwTHU4TlZoV0pUNEd4STdwUHJkbjJnUEh3a0djRlgrWHc4cm1zRFdTVmdJd0RWbEJTcmhYRHlZVEsKT3FpMVhvRzE3WmlrdWp3SEhleENOWlk4NDhKa2M1UnVFMmV5VUJmdnBXek1Qa0l2WWhpLy9aWGwwaDdPZEtPQgo0TWJJRVFIeHZ5c20rZThsQzlzQ0F3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZNQUV4UmlnS1MwVkRDWXVXaXh4cnJ4WlJRdkFNQTBHQ1NxR1NJYjMKRFFFQkN3VUFBNElCQVFBdmZrWUhiMHZzdTBUS0NKcllLUnplTFpTNytYbUM5dnNsbVBvQWNOQTU3RmZOYkEzeApkbEY2anJaN2kvS2lsSGFYSGs2V3o4ZDgycFJnSjByV3Z1NU5RcFF3bHFEcDV1bkJSd3VDdzlvNkhyNXRadmhVClh5VEhTTGdvaVJjOW5sdG43SXROZEJYT1JZZGpIa0ljYU5EcVBQa3A1SHBFNmx1NjVPVjZMVU9rRDBYbCs1TU4KdDBBazFZMTZIMWJaTWRaUm8rMllqc1ZUOEFha1g1L1B1UG1kRWpRRjJveW0vclZiQmo1U0VoajBGMnBxVXRmdQplZ0x1b1FHdG54OGZlc242YUVudzVBQzNVdDJlUDdpY2d2cXJOeXBuTHJ3bXRoWm8vSTdtN3Z5eUp3eHRMdG81CmY4cjdhWi9FUWhVSXJiRW5FZG9rL3pEMVo0UHlyV3lDQVNSMgotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://F456B8B6FC84724728C3D60B5F6067A3.gr7.eu-central-1.eks.amazonaws.com
+  name: arn:aws:eks:eu-central-1:218645542363:cluster/tarya-preprod-dev-eks
+contexts:
+- context:
+    cluster: arn:aws:eks:eu-central-1:218645542363:cluster/tarya-preprod-dev-eks
+    user: arn:aws:eks:eu-central-1:218645542363:cluster/tarya-preprod-dev-eks
+  name: arn:aws:eks:eu-central-1:218645542363:cluster/tarya-preprod-dev-eks
+current-context: arn:aws:eks:eu-central-1:218645542363:cluster/tarya-preprod-dev-eks
+kind: Config
+preferences: {}
+users:
+- name: arn:aws:eks:eu-central-1:218645542363:cluster/tarya-preprod-dev-eks
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      args:
+      - --region
+      - eu-central-1
+      - eks
+      - get-token
+      - --cluster-name
+      - tarya-preprod-dev-eks
+      command: aws
