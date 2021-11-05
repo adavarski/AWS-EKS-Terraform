@@ -568,7 +568,6 @@ public_subnets_cidr = ["10.1.12.0/22", "10.1.16.0/22", "10.1.20.0/22"]
 ```   
 - Create cluster using current k8s VPC and private networks (to access APP/DB VMs in current private subnets)
 ```
-Example file: live/preprod/eu-west-1/application/dev/base.tfvars
 #---------------------------------------------------------#
 # OPTION 2
 #---------------------------------------------------------#
@@ -581,7 +580,7 @@ private_subnet_ids = ["subnet-021e8e40ae0f41e27","subnet-
 03f19c6cb25621f19","subnet-0c15a71153934f3a8"]   
 ```
    
-### Example: preprod dev environment
+### Example: preprod dev environment (OPTION 1) 
 ```
 $ terraform -chdir=source apply -var-file ../live/preprod/eu-west-1/application/dev/base.tfvars
 provider.aws.region
