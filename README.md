@@ -545,7 +545,28 @@ EKS Cluster details can be extracted from terraform output or from AWS Console t
 ### Deploying example templates
 The `examples` folder contains multiple cluster templates with pre-populated `.tfvars` which can be used as a quick start. Reuse the templates from `examples` and follow the above Deployment steps as mentioned above.
    
-Note: Create cluster using current k8s VPC and private networks (to access APP/DB VMs in current private subnets)
+Note: 
+- Own VPC (for beter isolation) with public subnets, IGW and NAT
+Gateway
+```   
+#---------------------------------------------------------#
+# OPTION 1
+#---------------------------------------------------------#
+create_vpc
+= true
+enable_private_subnets = true
+enable_public_subnets = true
+# Enable or Disable NAT Gateqay and Internet Gateway for Public Subnets
+enable_nat_gateway = true
+single_nat_gateway = true
+create_igw
+= true
+vpc_cidr_block
+= "10.1.0.0/18"
+private_subnets_cidr = ["10.1.0.0/22", "10.1.4.0/22", "10.1.8.0/22"]
+public_subnets_cidr = ["10.1.12.0/22", "10.1.16.0/22", "10.1.20.0/22"]  
+```   
+- Create cluster using current k8s VPC and private networks (to access APP/DB VMs in current private subnets)
 ```
 Example file: live/preprod/eu-west-1/application/dev/base.tfvars
 #---------------------------------------------------------#
