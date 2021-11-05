@@ -544,6 +544,20 @@ EKS Cluster details can be extracted from terraform output or from AWS Console t
 
 ### Deploying example templates
 The `examples` folder contains multiple cluster templates with pre-populated `.tfvars` which can be used as a quick start. Reuse the templates from `examples` and follow the above Deployment steps as mentioned above.
+   
+Note: Create cluster using current k8s VPC and private networks (to access APP/DB VMs in current private subnets)
+
+Example file: live/preprod/eu-west-1/application/dev/base.tfvars
+#---------------------------------------------------------#
+# OPTION 2
+#---------------------------------------------------------#
+//create_vpc = false
+//vpc_id = "xxxxxx"
+//private_subnet_ids = ['xxxxxx','xxxxxx','xxxxxx']
+create_vpc = false
+vpc_id = "vpc-08fe8a789e9c7318c"
+private_subnet_ids = ["subnet-021e8e40ae0f41e27","subnet-
+03f19c6cb25621f19","subnet-0c15a71153934f3a8"]   
 
 ### Example: preprod dev environment
 ```
