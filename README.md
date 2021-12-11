@@ -633,6 +633,12 @@ users:
       - --cluster-name
       - tarya-preprod-dev-eks
       command: aws
+
+#### Add/Map users and roles
+
+$ kubectl describe configmap -n kube-system aws-auth   
+...   
+   
 $ kubectl cluster-info
 Kubernetes master is running at https://F456B8B6FC84724728C3D60B5F6067A3.gr7.eu-central-1.eks.amazonaws.com
 CoreDNS is running at https://F456B8B6FC84724728C3D60B5F6067A3.gr7.eu-central-1.eks.amazonaws.com/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
