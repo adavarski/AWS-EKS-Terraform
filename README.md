@@ -663,17 +663,17 @@ eks20210907103227991900000011"
 - "system:bootstrappers"
 - "system:nodes"
 - "system:node-proxier"
-"rolearn": "arn:aws:iam::462258654434:role/tarya-poc-dev-eks-
+"rolearn": "arn:aws:iam::462258654434:role/tarya-preprod-dev-eks-
 fargate20210907103227991600000010"
 "username": "system:node:{{SessionName}}"
 - "groups":
 - "system:masters"
-"rolearn": "arn:aws:iam::462258654434:role/tarya-poc-dev-eks-rbac-
+"rolearn": "arn:aws:iam::462258654434:role/tarya-preprod-dev-eks-rbac-
 admin"
 "username": "admin"
 - "groups":
 - "default:developers"
-"rolearn": "arn:aws:iam::462258654434:role/tarya-poc-dev-eks-rbac-
+"rolearn": "arn:aws:iam::462258654434:role/tarya-preprod-dev-eks-rbac-
 devs"
 "username": "devs"
 mapUsers:
