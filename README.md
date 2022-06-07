@@ -636,7 +636,70 @@ users:
 
 #### Add/Map users and roles
 
-$ kubectl describe configmap -n kube-system aws-auth   
+$ kubectl describe/edit configmap -n kube-system aws-auth   
+   
+Name:
+aws-auth
+Namespace:
+kube-system
+Labels:
+app.kubernetes.io/managed-by=Terraform
+terraform.io/module=terraform-aws-modules.eks.aws
+Annotations: <none>
+Data
+====
+mapAccounts:
+----
+[]
+mapRoles:
+----
+- "groups":
+- "system:bootstrappers"
+- "system:nodes"
+"rolearn": "arn:aws:iam::462258654434:role/tarya-poc-dev-
+eks20210907103227991900000011"
+"username": "system:node:{{EC2PrivateDNSName}}"
+- "groups":
+- "system:bootstrappers"
+- "system:nodes"
+- "system:node-proxier"
+"rolearn": "arn:aws:iam::462258654434:role/tarya-poc-dev-eks-
+fargate20210907103227991600000010"
+"username": "system:node:{{SessionName}}"
+- "groups":
+- "system:masters"
+"rolearn": "arn:aws:iam::462258654434:role/tarya-poc-dev-eks-rbac-
+admin"
+"username": "admin"
+- "groups":
+- "default:developers"
+"rolearn": "arn:aws:iam::462258654434:role/tarya-poc-dev-eks-rbac-
+devs"
+"username": "devs"
+mapUsers:
+----
+- userarn: arn:aws:iam::462258654434:user/Anastas.D
+username: anastasd
+groups:
+- system:masters   
+- userarn: arn:aws:iam::462258654434:user/Venci.K
+username: vencik
+groups:
+- system:masters
+- userarn: arn:aws:iam::462258654434:user/Peter.M
+username: petarm
+groups:
+- system:masters
+- userarn: arn:aws:iam::462258654434:user/Ivan.G
+username: ivang
+groups:
+- system:masters
+BinaryData
+====
+Events:
+<none>   
+   
+   
 ...   
    
 $ kubectl cluster-info
