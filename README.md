@@ -1,5 +1,8 @@
 # AWS : Provisioning production-ready Amazon EKS clusters using Terraform
 
+[![Pre-Commit](https://github.com/adavarski/AWS-EKS-Terraform/workflows/Pre-Commit/badge.svg)](https://github.com/adavarski/AWS-EKS-Terraform/actions)
+[![tfsec](https://github.com/adavarski/AWS-EKS-Terraform/workflows/tfsec/badge.svg)](https://github.com/adavarski/AWS-EKS-Terraform/actions)
+
 # Table of Contents:
 -----------------------------------------------------------
 # PART A: Architecture Overview
